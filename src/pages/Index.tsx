@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Send } from 'lucide-react';
+import { Send, ExternalLink } from 'lucide-react';
 import ModelSelector from '@/components/ModelSelector';
 import TopicTextarea from '@/components/TopicTextarea';
 import GenerationSettings from '@/components/GenerationSettings';
@@ -70,6 +70,43 @@ const Index: React.FC = () => {
     });
   };
 
+  const handleOpenInBrowser = () => {
+    if (generatedPrompts.length === 0) {
+      toast({
+        title: "No prompts to open",
+        description: "Please generate some prompts first.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    try {
+      generatedPrompts.forEach((prompt, index) => {
+        // Encode the prompt for URL
+        const encodedPrompt = encodeURIComponent(prompt);
+        
+        // Create ChatGPT URL with the prompt
+        const chatGptUrl = `https://chat.openai.com/?q=${encodedPrompt}`;
+        
+        // Open each prompt in a new tab with a small delay to prevent browser blocking
+        setTimeout(() => {
+          window.open(chatGptUrl, `_blank_${index}`);
+        }, index * 100);
+      });
+
+      toast({
+        title: "Opening in browser!",
+        description: `${generatedPrompts.length} ChatGPT tab${generatedPrompts.length > 1 ? 's' : ''} opened with your prompts.`,
+      });
+    } catch (error) {
+      toast({
+        title: "Failed to open browser",
+        description: "Unable to open ChatGPT tabs. Please check your browser settings.",
+        variant: "destructive",
+      });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
@@ -134,22 +171,40 @@ const Index: React.FC = () => {
           {/* Right Column - Results (40%) */}
           <div className="lg:col-span-2">
             <div className="lg:sticky lg:top-8 space-y-4">
-              {/* Send to AI Designer Button */}
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.4 }}
-              >
-                <Button
-                  onClick={handleSendToDesigner}
-                  className="w-full"
-                  size="lg"
-                  disabled={generatedPrompts.length === 0}
+              {/* Action Buttons */}
+              <div className="space-y-3">
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.4 }}
                 >
-                  <Send className="w-4 h-4 mr-2" />
-                  Send to AI Designer
-                </Button>
-              </motion.div>
+                  <Button
+                    onClick={handleOpenInBrowser}
+                    className="w-full bg-green-600 hover:bg-green-700 text-white"
+                    size="lg"
+                    disabled={generatedPrompts.length === 0}
+                  >
+                    <ExternalLink className="w-4 h-4 mr-2" />
+                    Open in Browser
+                  </Button>
+                </motion.div>
+
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: 0.5 }}
+                >
+                  <Button
+                    onClick={handleSendToDesigner}
+                    className="w-full"
+                    size="lg"
+                    disabled={generatedPrompts.length === 0}
+                  >
+                    <Send className="w-4 h-4 mr-2" />
+                    Send to AI Designer
+                  </Button>
+                </motion.div>
+              </div>
 
               {/* Results Section */}
               <AnimatePresence mode="wait">
