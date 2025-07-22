@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Send, ExternalLink } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import ModelSelector from '@/components/ModelSelector';
 import TopicTextarea from '@/components/TopicTextarea';
 import GenerationSettings from '@/components/GenerationSettings';
@@ -54,22 +54,6 @@ const Index: React.FC = () => {
     }
   };
 
-  const handleSendToDesigner = () => {
-    if (generatedPrompts.length === 0) {
-      toast({
-        title: "No prompts to send",
-        description: "Please generate some prompts first.",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    toast({
-      title: "Sent to AI Designer!",
-      description: "Your design briefs have been sent to the AI Designer for processing.",
-    });
-  };
-
   const handleOpenInBrowser = () => {
     if (generatedPrompts.length === 0) {
       toast({
@@ -82,10 +66,11 @@ const Index: React.FC = () => {
 
     try {
       generatedPrompts.forEach((prompt, index) => {
-        // Encode the prompt for URL
-        const encodedPrompt = encodeURIComponent(prompt);
+        // Encode the prompt for URL and add instruction to create image
+        const imagePrompt = `Create an image based on this design brief: ${prompt}`;
+        const encodedPrompt = encodeURIComponent(imagePrompt);
         
-        // Create ChatGPT URL with the prompt
+        // Create ChatGPT URL with the prompt that will auto-start image creation
         const chatGptUrl = `https://chat.openai.com/?q=${encodedPrompt}`;
         
         // Open each prompt in a new tab with a small delay to prevent browser blocking
@@ -96,7 +81,7 @@ const Index: React.FC = () => {
 
       toast({
         title: "Opening in browser!",
-        description: `${generatedPrompts.length} ChatGPT tab${generatedPrompts.length > 1 ? 's' : ''} opened with your prompts.`,
+        description: `${generatedPrompts.length} ChatGPT tab${generatedPrompts.length > 1 ? 's' : ''} opened with your prompts for automatic image creation.`,
       });
     } catch (error) {
       toast({
@@ -171,40 +156,22 @@ const Index: React.FC = () => {
           {/* Right Column - Results (40%) */}
           <div className="lg:col-span-2">
             <div className="lg:sticky lg:top-8 space-y-4">
-              {/* Action Buttons */}
-              <div className="space-y-3">
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.4 }}
+              {/* Open in Browser Button */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+              >
+                <Button
+                  onClick={handleOpenInBrowser}
+                  className="w-full bg-angrio-orange hover:bg-angrio-orange/90 text-white"
+                  size="lg"
+                  disabled={generatedPrompts.length === 0}
                 >
-                  <Button
-                    onClick={handleOpenInBrowser}
-                    className="w-full bg-green-600 hover:bg-green-700 text-white"
-                    size="lg"
-                    disabled={generatedPrompts.length === 0}
-                  >
-                    <ExternalLink className="w-4 h-4 mr-2" />
-                    Open in Browser
-                  </Button>
-                </motion.div>
-
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: 0.5 }}
-                >
-                  <Button
-                    onClick={handleSendToDesigner}
-                    className="w-full"
-                    size="lg"
-                    disabled={generatedPrompts.length === 0}
-                  >
-                    <Send className="w-4 h-4 mr-2" />
-                    Send to AI Designer
-                  </Button>
-                </motion.div>
-              </div>
+                  <ExternalLink className="w-4 h-4 mr-2" />
+                  Open in Browser
+                </Button>
+              </motion.div>
 
               {/* Results Section */}
               <AnimatePresence mode="wait">
