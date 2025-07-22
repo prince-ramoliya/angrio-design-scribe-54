@@ -9,98 +9,94 @@ export interface CreativeElements {
 
 export const creativeElements: CreativeElements = {
   headlines: [
+    "Why You Need A {topic} Solution?",
     "The Future of {topic} is Here",
-    "Why Your {topic} Needs a Tech Upgrade",
-    "Revolutionary {topic} Solutions",
     "Transform Your {topic} Today",
-    "Next-Gen {topic} Innovation",
-    "Breakthrough {topic} Technology",
-    "The Ultimate {topic} Experience",
-    "Redefining {topic} Excellence",
+    "Revolutionary {topic} Innovation",
+    "Smart {topic} for Modern Business",
+    "Next-Gen {topic} Technology",
     "Advanced {topic} Solutions",
-    "Smart {topic} for Modern Business"
+    "Breakthrough {topic} Experience",
+    "Professional {topic} Services",
+    "Expert {topic} Consulting"
   ],
   
   taglines: [
-    "Turn {topic} ideas into investor-ready products",
-    "Innovative tech for modern {topic} challenges",
-    "Streamline your {topic} workflow with AI",
-    "Professional {topic} solutions that scale",
-    "Cutting-edge {topic} for competitive advantage",
-    "Transform complexity into {topic} simplicity",
-    "Your {topic} success, powered by innovation",
-    "Enterprise-grade {topic} made accessible",
-    "Data-driven {topic} for better results",
-    "Future-proof your {topic} strategy"
+    "Because your {topic} idea is as ready as a penguin in flip-flops!",
+    "Turn {topic} chaos into competitive advantage!",
+    "Because manual {topic} is so last decade!",
+    "Your {topic} success story starts here!",
+    "Making {topic} simple, one solution at a time!",
+    "Transform {topic} complexity into clarity!",
+    "Because great {topic} deserves great technology!",
+    "Your {topic} journey, powered by innovation!",
+    "Making {topic} work smarter, not harder!",
+    "Professional {topic} solutions that actually work!"
   ],
 
   heroVisuals: [
-    "A 3D render of a glowing '{topic}' icon floating above a modern workspace with soft blue lighting and geometric patterns",
-    "Minimalist line art showing the process of '{topic}' transformation with flowing arrows and clean typography",
-    "Professional photography of diverse team members collaborating on {topic} solutions in a bright, modern office",
-    "Abstract gradient background featuring interconnected nodes representing {topic} innovation and connectivity",
-    "Sleek dashboard interface mockup displaying {topic} analytics with clean data visualizations and modern UI elements",
-    "Dynamic illustration of {topic} workflow automation with floating icons and connecting pathways",
-    "High-tech laboratory setting showcasing {topic} development with glowing screens and advanced equipment",
-    "Modern cityscape silhouette with {topic} technology elements integrated into the skyline at golden hour",
-    "Clean product photography of {topic} tools arranged on a white surface with strategic lighting and shadows",
-    "Futuristic holographic display showing {topic} data streams and interactive elements in a dark environment"
+    "Formal cartoon penguin wearing a black tuxedo, bow-tie & bowler hat related to {topic}; front-facing; soft studio lighting; isolated on transparent background.",
+    "Professional 3D rendered {topic} icon with navy and orange accents; clean minimal design; soft shadows; isolated on transparent background.",
+    "Sleek {topic} dashboard interface mockup floating in 3D space; navy and orange UI elements; clean modern design; transparent background.",
+    "Abstract geometric {topic} visualization with interconnected nodes; navy base with orange highlights; 3D rendered; minimal background.",
+    "Professional team silhouettes working on {topic} solutions; clean vector style; navy and orange color scheme; transparent background.",
+    "Modern {topic} workflow diagram with flowing arrows; 3D isometric style; brand colors; clean isolated design.",
+    "Futuristic {topic} technology symbols arranged in a circle; glowing orange accents on navy base; 3D rendered; transparent background.",
+    "Clean product mockup of {topic} tools and interfaces; professional photography style; navy and orange branding; isolated background.",
+    "Dynamic {topic} data visualization charts and graphs; floating 3D elements; brand color palette; minimal transparent background.",
+    "Stylized {topic} industry building or cityscape; modern vector illustration; navy and orange accents; clean isolated design."
   ],
 
   blueprints: [
-    `**LAYOUT: Hero Right**
-Primary Headline: {headline}
-Supporting Text: {tagline}
-Visual Element: {heroVisual}
-Call-to-Action: Positioned bottom-left
-Brand Colors: Angrio Orange (#FF7A00) and Navy (#0B2C5F)
-Typography: Clean sans-serif headers, readable body text
-Logo Placement: Top-right corner`,
+    `##############################
+### ANGRIO LINKEDIN POST – MASTER PROMPT
+### (1080 × 1080 px, RGB, 300 ppi)
+##############################
 
-    `**LAYOUT: Centered Focus**
-Main Title: {headline}
-Subtitle: {tagline}
-Hero Image: {heroVisual}
-Button Placement: Center-bottom
-Color Scheme: Primary Angrio Orange with white background
-Font Weight: Bold headlines, medium body text
-Spacing: Generous white space for clean look`,
+[STYLE  —  DO NOT EDIT]
+• Canvas: 1 : 1 square, off-white (#FDFDFD) base.
+• Subtle grid overlay: 40 px squares, 10 % opacity, #E7E7E7 lines.
+• Primary colours: Navy #004BD6  |  Accent Orange #FF8828  |  Black #000000.
+• Fonts: 
+    – Headline: *DM Sans ExtraBold* (or Inter Black), sentence case, –20 tracking.  
+    – Body & sub-lines: *DM Sans Regular*, 0 tracking.
+• Highlight effect: words wrapped in rectangular orange badges (#FF8828) with 16 px vertical padding, white text, 8 px corner radius.
+• Layout grid (margin → centre):
+    1. Top bar: 48 px margin.  
+    2. Logo (angrio_logo.png) top-right, width 140 px.  
+    3. Optional tag (#angrio-team) top-left, DM Sans Medium 28 pt, navy.  
+    4. Headline block on left half, max width 560 px, 72-96 pt leading.  
+    5. Hero visual on right half, vertically centred, 40 % canvas width.  
+    6. Sub-headline / witty one-liner below headline, 40 pt, 520 px width.  
+    7. Footer strip: website + phone, DM Sans Medium 32 pt, centred, 64 px above bottom edge.
+• Spacing: 60 px gutter between headline block and hero.
+• Graphic style for hero: clean, semi-realistic 3-D render or flat vector matching brand palette; minimal background so copy dominates.
 
-    `**LAYOUT: Split Vertical**
-Left Section: {headline}
-Right Section: {heroVisual}
-Bottom Banner: {tagline}
-CTA Position: Right-aligned
-Brand Identity: Consistent Angrio color palette
-Text Hierarchy: Large title, medium subtitle, small footer
-Visual Balance: 60/40 text to image ratio`,
+[ASSETS  —  DO NOT EDIT]
+• angriotechnologies_logo.png  (white-space-trimmed)
+• Contact copy: "www.angriotechnologies.com  |  +91 8141067657"
 
-    `**LAYOUT: Grid System**
-Header Zone: {headline}
-Content Grid: {heroVisual}
-Footer Strip: {tagline}
-Action Button: Floating bottom-right
-Color Treatment: Gradient overlay with brand colors
-Typography Scale: Progressive size reduction
-Alignment: Left-aligned text, centered visuals`,
+##############################
+### SLOTS  —  YOU EDIT ONLY THESE
+##############################
 
-    `**LAYOUT: Card Design**
-Card Header: {headline}
-Card Body: {heroVisual}
-Card Footer: {tagline}
-Interactive Element: Hover effect on CTA
-Background: Subtle gradient or solid white
-Text Styling: Contrasting colors for readability
-Corner Radius: Consistent 12px border radius`,
+HEADLINE_LINE_1:   {headline}
+HIGHLIGHT_WORD_1:  Tech
+HIGHLIGHT_WORD_2:  Partner
+SUBLINE/WITTY:     {tagline}
 
-    `**LAYOUT: Magazine Style**
-Feature Headline: {headline}
-Editorial Visual: {heroVisual}
-Byline Text: {tagline}
-Navigation: Breadcrumb style
-Color Story: Monochromatic with orange accents
-Editorial Layout: Multi-column text flow
-Image Treatment: Full-bleed or contained`
+HERO_VISUAL_PROMPT: 
+"{heroVisual}"
+
+OPTIONAL_TOP_TAG:  #angrio-team
+OPTIONAL_FOOTER_TAG: #BuildWithAngrio
+
+##############################
+### OUTPUT INSTRUCTIONS  —  DO NOT EDIT
+##############################
+• Render the final post exactly to spec, embedding logo and footer text. 
+• Centre all text blocks on the vertical grid. 
+• Ensure highlight badges retain stroke-less orange fill and hug the highlighted words tightly.`
   ]
 };
 
@@ -120,26 +116,7 @@ export function buildCreativePrompt(topic: string, elements: CreativeElements): 
     .replace(/{tagline}/g, processedTagline)
     .replace(/{heroVisual}/g, processedHeroVisual);
 
-  return `**ANGRIO DESIGN BRIEF**
-
-${processedBlueprint}
-
-**BRAND SPECIFICATIONS:**
-- Primary Brand Color: Angrio Orange (#FF7A00)
-- Secondary Brand Color: Angrio Navy (#0B2C5F)
-- Background: Clean white (#FFFFFF) or light gray (#F9FAFB)
-- Typography: Professional sans-serif (Inter/DM Sans)
-- Logo: Angrio logo placement as specified
-- Dimensions: 1080x1080px (Instagram) or 1200x628px (LinkedIn)
-
-**CREATIVE DIRECTION:**
-Topic Focus: ${topic}
-Style: Professional, modern, trustworthy
-Tone: Innovative, expert, solution-oriented
-Target: Business professionals and decision-makers
-
-**DELIVERABLE:**
-High-resolution social media post optimized for ${topic} audience engagement.`;
+  return processedBlueprint;
 }
 
 export function generateMultiplePrompts(topic: string, count: number): string[] {
