@@ -1,12 +1,14 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Send } from 'lucide-react';
 import ModelSelector from '@/components/ModelSelector';
 import TopicTextarea from '@/components/TopicTextarea';
 import GenerationSettings from '@/components/GenerationSettings';
 import ReadyToGenerate from '@/components/ReadyToGenerate';
 import PromptCard from '@/components/PromptCard';
 import ThemeToggle from '@/components/ThemeToggle';
+import { Button } from '@/components/ui/button';
 import { generateMultiplePrompts } from '@/utils/creativityEngine';
 import { useToast } from '@/hooks/use-toast';
 
@@ -50,6 +52,22 @@ const Index: React.FC = () => {
     } finally {
       setIsGenerating(false);
     }
+  };
+
+  const handleSendToDesigner = () => {
+    if (generatedPrompts.length === 0) {
+      toast({
+        title: "No prompts to send",
+        description: "Please generate some prompts first.",
+        variant: "destructive",
+      });
+      return;
+    }
+
+    toast({
+      title: "Sent to AI Designer!",
+      description: "Your design briefs have been sent to the AI Designer for processing.",
+    });
   };
 
   return (
@@ -115,7 +133,25 @@ const Index: React.FC = () => {
 
           {/* Right Column - Results (40%) */}
           <div className="lg:col-span-2">
-            <div className="lg:sticky lg:top-8">
+            <div className="lg:sticky lg:top-8 space-y-4">
+              {/* Send to AI Designer Button */}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.4 }}
+              >
+                <Button
+                  onClick={handleSendToDesigner}
+                  className="w-full"
+                  size="lg"
+                  disabled={generatedPrompts.length === 0}
+                >
+                  <Send className="w-4 h-4 mr-2" />
+                  Send to AI Designer
+                </Button>
+              </motion.div>
+
+              {/* Results Section */}
               <AnimatePresence mode="wait">
                 {generatedPrompts.length === 0 ? (
                   <motion.div
