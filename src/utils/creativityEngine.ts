@@ -107,7 +107,7 @@ export function buildCreativePrompt(topic: string, elements: CreativeElements): 
   const headline = elements.headlines[Math.floor(Math.random() * elements.headlines.length)];
   const tagline = elements.taglines[Math.floor(Math.random() * elements.taglines.length)];
   const heroVisual = elements.heroVisuals[Math.floor(Math.random() * elements.heroVisuals.length)];
-  const blueprint = elements.blueprints[Math.floor(Math.random() * elements.blueprints.length)];
+  const blueprint = elements.blueprints[0]; // Use the single blueprint template
 
   console.log('Selected elements:', { headline, tagline, heroVisual });
 
@@ -129,29 +129,21 @@ export function generateMultiplePrompts(topic: string, count: number): string[] 
   console.log('Generating multiple prompts:', { topic, count });
   
   const prompts: string[] = [];
-  const usedCombinations = new Set<string>();
-
-  let attempts = 0;
-  const maxAttempts = count * 10; // Prevent infinite loops
-
-  while (prompts.length < count && attempts < maxAttempts) {
-    attempts++;
-    console.log(`Attempt ${attempts}: Generating prompt ${prompts.length + 1} of ${count}`);
+  
+  // Generate each prompt with different random combinations
+  for (let i = 0; i < count; i++) {
+    console.log(`Generating prompt ${i + 1} of ${count}`);
     
-    const prompt = buildCreativePrompt(topic, creativeElements);
-    
-    // Create a simple hash to avoid exact duplicates
-    const hash = prompt.substring(0, 200);
-    
-    if (!usedCombinations.has(hash)) {
-      usedCombinations.add(hash);
+    try {
+      const prompt = buildCreativePrompt(topic, creativeElements);
       prompts.push(prompt);
-      console.log(`Successfully generated prompt ${prompts.length}`);
-    } else {
-      console.log('Duplicate prompt detected, retrying...');
+      console.log(`Successfully generated prompt ${i + 1}`);
+    } catch (error) {
+      console.error(`Error generating prompt ${i + 1}:`, error);
+      // Continue with next prompt instead of breaking
     }
   }
 
-  console.log(`Final result: Generated ${prompts.length} prompts after ${attempts} attempts`);
+  console.log(`Final result: Generated ${prompts.length} prompts`);
   return prompts;
 }
