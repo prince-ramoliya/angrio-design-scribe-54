@@ -21,7 +21,14 @@ const Index: React.FC = () => {
   const { toast } = useToast();
 
   const handleGenerate = async () => {
+    console.log('Generate button clicked');
+    console.log('Topic:', topic);
+    console.log('Topic length:', topic.length);
+    console.log('Topic trimmed:', topic.trim());
+    console.log('Topic trimmed length:', topic.trim().length);
+    
     if (!topic.trim()) {
+      console.log('Topic is empty, showing error toast');
       toast({
         title: "Topic required",
         description: "Please enter a topic or campaign description to generate prompts.",
@@ -30,13 +37,18 @@ const Index: React.FC = () => {
       return;
     }
 
+    console.log('Starting generation process...');
     setIsGenerating(true);
     
     // Simulate processing time for better UX
     await new Promise(resolve => setTimeout(resolve, 1500));
     
     try {
+      console.log('Calling generateMultiplePrompts with:', { topic: topic.trim(), promptCount });
       const prompts = generateMultiplePrompts(topic.trim(), promptCount);
+      console.log('Generated prompts:', prompts);
+      console.log('Number of prompts generated:', prompts.length);
+      
       setGeneratedPrompts(prompts);
       
       toast({
@@ -44,6 +56,7 @@ const Index: React.FC = () => {
         description: `${prompts.length} unique design brief${prompts.length > 1 ? 's' : ''} generated successfully.`,
       });
     } catch (error) {
+      console.error('Error generating prompts:', error);
       toast({
         title: "Generation failed",
         description: "Unable to generate prompts. Please try again.",
