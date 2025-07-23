@@ -1,5 +1,5 @@
 
-// Core creativity engine for generating unique design prompts
+// Core creativity engine for generating unique design prompts with expert LinkedIn strategy
 export interface CreativeElements {
   headlines: string[];
   taglines: string[];
@@ -18,7 +18,12 @@ export const creativeElements: CreativeElements = {
     "Advanced {topic} Solutions",
     "Breakthrough {topic} Experience",
     "Professional {topic} Services",
-    "Expert {topic} Consulting"
+    "Expert {topic} Consulting",
+    "How {topic} Changed Everything",
+    "The Secret to {topic} Success",
+    "Why {topic} Matters Now",
+    "Stop Struggling with {topic}",
+    "The {topic} Game Changer"
   ],
   
   taglines: [
@@ -31,7 +36,12 @@ export const creativeElements: CreativeElements = {
     "Because great {topic} deserves great technology!",
     "Your {topic} journey, powered by innovation!",
     "Making {topic} work smarter, not harder!",
-    "Professional {topic} solutions that actually work!"
+    "Professional {topic} solutions that actually work!",
+    "When {topic} meets cutting-edge innovation!",
+    "Because your {topic} deserves the best!",
+    "Turning {topic} challenges into opportunities!",
+    "The {topic} revolution starts with you!",
+    "Making {topic} effortless and effective!"
   ],
 
   heroVisuals: [
@@ -52,6 +62,17 @@ export const creativeElements: CreativeElements = {
 ### ANGRIO LINKEDIN POST – MASTER PROMPT
 ### (1080 × 1080 px, RGB, 300 ppi)
 ##############################
+
+[EXPERT LINKEDIN STRATEGY CONTEXT]
+You are an expert social media strategist and viral LinkedIn post writer with over ten years of hands-on experience, especially focused on LinkedIn. You have crafted thousands of posts and mastered the formula behind engagement, virality, timing, structure, tone, and audience psychology.
+
+Apply these LinkedIn best practices:
+• Hook readers within the first 2 lines
+• Use storytelling and emotional triggers
+• Include actionable insights
+• Maintain professional yet conversational tone
+• Structure for maximum readability and engagement
+• Focus on value-driven content that sparks discussion
 
 [STYLE  —  DO NOT EDIT]
 • Canvas: 1 : 1 square, off-white (#FDFDFD) base.
@@ -92,22 +113,34 @@ OPTIONAL_TOP_TAG:  #angrio-team
 OPTIONAL_FOOTER_TAG: #BuildWithAngrio
 
 ##############################
+### LINKEDIN CONTENT STRATEGY
+##############################
+• Create content that provides immediate value
+• Use power words and emotional triggers
+• Structure for scannable, digestible content
+• Include clear call-to-action elements
+• Focus on business outcomes and ROI
+• Maintain Angrio's professional brand voice
+• Ensure content sparks meaningful discussions
+
+##############################
 ### OUTPUT INSTRUCTIONS  —  DO NOT EDIT
 ##############################
 • Render the final post exactly to spec, embedding logo and footer text. 
 • Centre all text blocks on the vertical grid. 
-• Ensure highlight badges retain stroke-less orange fill and hug the highlighted words tightly.`
+• Ensure highlight badges retain stroke-less orange fill and hug the highlighted words tightly.
+• Apply LinkedIn viral content principles throughout the design.`
   ]
 };
 
 export function buildCreativePrompt(topic: string, elements: CreativeElements): string {
   console.log('Building creative prompt for topic:', topic);
   
-  // Randomly select elements
+  // Randomly select elements for variety
   const headline = elements.headlines[Math.floor(Math.random() * elements.headlines.length)];
   const tagline = elements.taglines[Math.floor(Math.random() * elements.taglines.length)];
   const heroVisual = elements.heroVisuals[Math.floor(Math.random() * elements.heroVisuals.length)];
-  const blueprint = elements.blueprints[0]; // Use the single blueprint template
+  const blueprint = elements.blueprints[0]; // Use the enhanced blueprint template
 
   console.log('Selected elements:', { headline, tagline, heroVisual });
 
