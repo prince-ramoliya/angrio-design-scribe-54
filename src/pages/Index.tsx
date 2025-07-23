@@ -127,48 +127,50 @@ const Index: React.FC = () => {
       {/* Main Content */}
       <main className="container mx-auto px-4 py-8">
         <div className="grid lg:grid-cols-5 gap-8">
-          {/* Left Column - Controls (60%) */}
-          <div className="lg:col-span-3 space-y-6">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-            >
-              <ModelSelector
-                selectedModel={selectedModel}
-                onModelChange={setSelectedModel}
-              />
-            </motion.div>
+          {/* Left Column - Controls (60%) - Now Sticky */}
+          <div className="lg:col-span-3">
+            <div className="lg:sticky lg:top-8 space-y-6">
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+              >
+                <ModelSelector
+                  selectedModel={selectedModel}
+                  onModelChange={setSelectedModel}
+                />
+              </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
-            >
-              <TopicTextarea
-                topic={topic}
-                onTopicChange={setTopic}
-              />
-            </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+              >
+                <TopicTextarea
+                  topic={topic}
+                  onTopicChange={setTopic}
+                />
+              </motion.div>
 
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.3 }}
-            >
-              <GenerationSettings
-                promptCount={promptCount}
-                onPromptCountChange={setPromptCount}
-                onGenerate={handleGenerate}
-                isGenerating={isGenerating}
-                disabled={!topic.trim()}
-              />
-            </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+              >
+                <GenerationSettings
+                  promptCount={promptCount}
+                  onPromptCountChange={setPromptCount}
+                  onGenerate={handleGenerate}
+                  isGenerating={isGenerating}
+                  disabled={!topic.trim()}
+                />
+              </motion.div>
+            </div>
           </div>
 
-          {/* Right Column - Results (40%) */}
+          {/* Right Column - Results (40%) - Scrollable */}
           <div className="lg:col-span-2">
-            <div className="lg:sticky lg:top-8 space-y-4">
+            <div className="space-y-4">
               {/* Open in Browser Button */}
               <motion.div
                 initial={{ opacity: 0, y: 20 }}

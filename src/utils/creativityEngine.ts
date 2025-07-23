@@ -1,4 +1,3 @@
-
 // Core creativity engine for generating unique design prompts with expert LinkedIn strategy
 export interface CreativeElements {
   headlines: string[];
@@ -9,57 +8,57 @@ export interface CreativeElements {
 
 export const creativeElements: CreativeElements = {
   headlines: [
-    "Why You Need A {topic} Solution?",
-    "The Future of {topic} is Here",
-    "Transform Your {topic} Today",
-    "Revolutionary {topic} Innovation",
-    "Smart {topic} for Modern Business",
-    "Next-Gen {topic} Technology",
-    "Advanced {topic} Solutions",
-    "Breakthrough {topic} Experience",
-    "Professional {topic} Services",
-    "Expert {topic} Consulting",
-    "How {topic} Changed Everything",
-    "The Secret to {topic} Success",
-    "Why {topic} Matters Now",
-    "Stop Struggling with {topic}",
-    "The {topic} Game Changer"
+    "Why {topic}?",
+    "Meet {topic}",
+    "New {topic}",
+    "Try {topic}",
+    "Get {topic}",
+    "Use {topic}",
+    "Win with {topic}",
+    "Build {topic}",
+    "Start {topic}",
+    "Go {topic}",
+    "Own {topic}",
+    "Live {topic}",
+    "Be {topic}",
+    "Do {topic}",
+    "Make {topic}"
   ],
   
   taglines: [
-    "Because your {topic} idea is as ready as a penguin in flip-flops!",
-    "Turn {topic} chaos into competitive advantage!",
-    "Because manual {topic} is so last decade!",
-    "Your {topic} success story starts here!",
-    "Making {topic} simple, one solution at a time!",
-    "Transform {topic} complexity into clarity!",
-    "Because great {topic} deserves great technology!",
-    "Your {topic} journey, powered by innovation!",
-    "Making {topic} work smarter, not harder!",
-    "Professional {topic} solutions that actually work!",
-    "When {topic} meets cutting-edge innovation!",
-    "Because your {topic} deserves the best!",
-    "Turning {topic} challenges into opportunities!",
-    "The {topic} revolution starts with you!",
-    "Making {topic} effortless and effective!"
+    "Less talk, more {topic}",
+    "Simply {topic}",
+    "Just {topic}",
+    "Pure {topic}",
+    "Smart {topic}",
+    "Quick {topic}",
+    "Easy {topic}",
+    "Fresh {topic}",
+    "Bold {topic}",
+    "Clean {topic}",
+    "Fast {topic}",
+    "New {topic}",
+    "Real {topic}",
+    "True {topic}",
+    "Live {topic}"
   ],
 
   heroVisuals: [
-    "Formal cartoon penguin wearing a black tuxedo, bow-tie & bowler hat related to {topic}; front-facing; soft studio lighting; isolated on transparent background.",
-    "Professional 3D rendered {topic} icon with navy and orange accents; clean minimal design; soft shadows; isolated on transparent background.",
-    "Sleek {topic} dashboard interface mockup floating in 3D space; navy and orange UI elements; clean modern design; transparent background.",
-    "Abstract geometric {topic} visualization with interconnected nodes; navy base with orange highlights; 3D rendered; minimal background.",
-    "Professional team silhouettes working on {topic} solutions; clean vector style; navy and orange color scheme; transparent background.",
-    "Modern {topic} workflow diagram with flowing arrows; 3D isometric style; brand colors; clean isolated design.",
-    "Futuristic {topic} technology symbols arranged in a circle; glowing orange accents on navy base; 3D rendered; transparent background.",
-    "Clean product mockup of {topic} tools and interfaces; professional photography style; navy and orange branding; isolated background.",
-    "Dynamic {topic} data visualization charts and graphs; floating 3D elements; brand color palette; minimal transparent background.",
-    "Stylized {topic} industry building or cityscape; modern vector illustration; navy and orange accents; clean isolated design."
+    "Minimalist {topic} icon with geometric shapes; gradient from navy to orange; floating 3D elements; clean white background with subtle grid pattern.",
+    "Abstract {topic} visualization with flowing particles; navy and orange color palette; dynamic motion blur; transparent background with dot matrix overlay.",
+    "Clean {topic} interface mockup with glassmorphism effect; soft shadows; navy UI with orange accents; diagonal grid background pattern.",
+    "Isometric {topic} illustration with bold colors; 3D rendered; navy base with orange highlights; hexagonal background pattern.",
+    "Futuristic {topic} hologram with neon effects; glowing orange elements; navy background with circuit board pattern.",
+    "Sleek {topic} dashboard with data visualization; modern flat design; brand colors; wave pattern background.",
+    "Stylized {topic} workspace with floating elements; minimalist 3D; navy and orange palette; triangular mesh background.",
+    "Dynamic {topic} flow chart with animated arrows; clean vector style; gradient background with geometric shapes.",
+    "Professional {topic} tools arrangement; product photography style; soft lighting; fabric texture background pattern.",
+    "Abstract {topic} network nodes with connections; 3D rendered spheres; navy base with orange links; crystalline background pattern."
   ],
 
   blueprints: [
     `##############################
-### ANGRIO LINKEDIN POST – MASTER PROMPT
+### ANGRIO LINKEDIN POST – MINIMAL CREATIVE
 ### (1080 × 1080 px, RGB, 300 ppi)
 ##############################
 
@@ -67,69 +66,57 @@ export const creativeElements: CreativeElements = {
 You are an expert social media strategist and viral LinkedIn post writer with over ten years of hands-on experience, especially focused on LinkedIn. You have crafted thousands of posts and mastered the formula behind engagement, virality, timing, structure, tone, and audience psychology.
 
 Apply these LinkedIn best practices:
-• Hook readers within the first 2 lines
-• Use storytelling and emotional triggers
-• Include actionable insights
-• Maintain professional yet conversational tone
-• Structure for maximum readability and engagement
-• Focus on value-driven content that sparks discussion
+• Hook with powerful opening line
+• Use minimal, impactful copy
+• Create visual hierarchy
+• Include strong call-to-action
+• Focus on value and outcomes
+• Maintain professional brand voice
 
-[STYLE  —  DO NOT EDIT]
-• Canvas: 1 : 1 square, off-white (#FDFDFD) base.
-• Subtle grid overlay: 40 px squares, 10 % opacity, #E7E7E7 lines.
-• Primary colours: Navy #004BD6  |  Accent Orange #FF8828  |  Black #000000.
-• Fonts: 
-    – Headline: *DM Sans ExtraBold* (or Inter Black), sentence case, –20 tracking.  
-    – Body & sub-lines: *DM Sans Regular*, 0 tracking.
-• Highlight effect: words wrapped in rectangular orange badges (#FF8828) with 16 px vertical padding, white text, 8 px corner radius.
-• Layout grid (margin → centre):
-    1. Top bar: 48 px margin.  
-    2. Logo (angriotechnologies_logo.png) top-right, width 140 px.  
-    3. Optional tag (#angrio-team) top-left, DM Sans Medium 28 pt, navy.  
-    4. Headline block on left half, max width 560 px, 72-96 pt leading.  
-    5. Hero visual on right half, vertically centred, 40 % canvas width.  
-    6. Sub-headline / witty one-liner below headline, 40 pt, 520 px width.  
-    7. Footer strip: website + phone, DM Sans Medium 32 pt, centred, 64 px above bottom edge.
-• Spacing: 60 px gutter between headline block and hero.
-• Graphic style for hero: clean, semi-realistic 3-D render or flat vector matching brand palette; minimal background so copy dominates.
+[STYLE  —  MINIMAL & CREATIVE]
+• Canvas: 1 : 1 square, dynamic background pattern (changes each time).
+• Background options: geometric grid, diagonal lines, dot matrix, hexagonal pattern, wave overlay, triangular mesh, circuit lines, crystalline texture, fabric weave, flowing particles.
+• Primary colours: Navy #004BD6  |  Accent Orange #FF8828  |  White #FFFFFF.
+• Typography: 
+    – Headline: Bold, large, impactful (80-120pt)
+    – Body: Clean, readable (40-50pt)
+    – Spacing: Generous white space
+• Visual elements: Minimal, geometric, 3D depth
+• Layout: Asymmetric, dynamic, modern
+• Hero visual: Right side, 45% width, vertically centered
+• Text: Left side, hierarchy-focused
 
-[ASSETS  —  DO NOT EDIT]
-• angriotechnologies_logo.png  (white-space-trimmed)
-• Contact copy: "www.angriotechnologies.com  |  +91 8141067657"
+[CONTENT STRATEGY]
+• Ultra-short, punchy headlines (2-4 words max)
+• Minimal taglines (3-5 words max)
+• Strong visual impact over text
+• Immediate value proposition
+• Professional yet approachable tone
 
-##############################
-### SLOTS  —  YOU EDIT ONLY THESE
-##############################
-
-HEADLINE_LINE_1:   {headline}
-HIGHLIGHT_WORD_1:  Tech
-HIGHLIGHT_WORD_2:  Partner
-SUBLINE/WITTY:     {tagline}
-
-HERO_VISUAL_PROMPT: 
-"{heroVisual}"
-
-OPTIONAL_TOP_TAG:  #angrio-team
-OPTIONAL_FOOTER_TAG: #BuildWithAngrio
+[ASSETS]
+• angriotechnologies_logo.png (top-right, 120px width)
+• Contact: "angriotechnologies.com  |  +91 8141067657" (bottom center, 28pt)
 
 ##############################
-### LINKEDIN CONTENT STRATEGY
+### SLOTS
 ##############################
-• Create content that provides immediate value
-• Use power words and emotional triggers
-• Structure for scannable, digestible content
-• Include clear call-to-action elements
-• Focus on business outcomes and ROI
-• Maintain Angrio's professional brand voice
-• Ensure content sparks meaningful discussions
+
+HEADLINE:          {headline}
+TAGLINE:           {tagline}
+HERO_VISUAL:       "{heroVisual}"
+BACKGROUND_STYLE:  Random geometric pattern with brand colors
+TOP_TAG:           #minimal
+FOOTER_TAG:        #BuildWithAngrio
 
 ##############################
-### OUTPUT INSTRUCTIONS  —  DO NOT EDIT
+### OUTPUT INSTRUCTIONS
 ##############################
-• Render the final post exactly to spec, embedding logo and footer text. 
-• Centre all text blocks on the vertical grid. 
-• Ensure highlight badges retain stroke-less orange fill and hug the highlighted words tightly.
-• Apply LinkedIn viral content principles throughout the design.`
+• Create visually striking, minimal design
+• Use different background pattern each time
+• Ensure high visual impact with minimal text
+• Apply modern, clean aesthetic
+• Focus on brand consistency
+• Make it scroll-stopping content for LinkedIn feed`
   ]
 };
 
