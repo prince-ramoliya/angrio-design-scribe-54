@@ -1,6 +1,6 @@
 
 import { cn } from "@/lib/utils"
-import { ElementType, ComponentPropsWithoutRef } from "react"
+import { ElementType, ComponentPropsWithoutRef, forwardRef } from "react"
 
 interface StarBorderProps<T extends ElementType> {
   as?: T
@@ -10,19 +10,16 @@ interface StarBorderProps<T extends ElementType> {
   children: React.ReactNode
 }
 
-export function StarBorder<T extends ElementType = "button">({
-  as,
-  className,
-  color,
-  speed = "6s",
-  children,
-  ...props
-}: StarBorderProps<T> & Omit<ComponentPropsWithoutRef<T>, keyof StarBorderProps<T>>) {
+export const StarBorder = forwardRef<
+  HTMLElement,
+  StarBorderProps<ElementType> & ComponentPropsWithoutRef<ElementType>
+>(({ as, className, color, speed = "6s", children, ...props }, ref) => {
   const Component = as || "button"
   const defaultColor = color || "hsl(var(--foreground))"
 
   return (
     <Component 
+      ref={ref}
       className={cn(
         "relative inline-block py-[1px] overflow-hidden rounded-[20px]",
         className
@@ -58,4 +55,6 @@ export function StarBorder<T extends ElementType = "button">({
       </div>
     </Component>
   )
-}
+})
+
+StarBorder.displayName = "StarBorder"
